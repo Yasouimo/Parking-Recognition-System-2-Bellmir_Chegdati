@@ -1,0 +1,232 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parking Space Recognition System &mdash; Parking Space Recognition System  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            Parking Space Recognition System
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Parking Space Recognition System</a><ul>
+<li><a class="reference internal" href="#contents">Contents</a></li>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#key-modules">Key Modules</a></li>
+<li><a class="reference internal" href="#how-it-works">How It Works</a></li>
+<li><a class="reference internal" href="#technical-details">Technical Details</a></li>
+<li><a class="reference internal" href="#next-steps">Next Steps</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Parking Space Recognition System</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Parking Space Recognition System</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="parking-space-recognition-system">
+<h1>Parking Space Recognition System<a class="headerlink" href="#parking-space-recognition-system" title="Link to this heading"></a></h1>
+<p>The <strong>Parking Space Recognition System</strong> is designed to detect and manage parking spaces in real time using computer vision and machine learning. This system includes several modules for data preparation, classification, and real-time parking spot analysis.</p>
+<p>This documentation explains the primary functionalities and key parts of the implementation.</p>
+<section id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>This project aims to solve the problem of parking space detection by leveraging:
+- <strong>Support Vector Machines (SVM)</strong> for classification.
+- Computer vision techniques for image processing.
+- Real-time video analysis to monitor parking occupancy.</p>
+</section>
+<section id="key-modules">
+<h2>Key Modules<a class="headerlink" href="#key-modules" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p><strong>ParkingSpaceRecognition.py</strong>:
+- Handles data preparation, model training, and evaluation.
+- Trains an SVM model to classify parking spots as “empty” or “not empty.”
+- Saves the trained model using Python’s <cite>pickle</cite> library.</p>
+<p><strong>Key Code Explanations:</strong>
+- <strong>Data Preparation</strong>:</p>
+<blockquote>
+<div><p>Images are resized to <cite>(15, 15)</cite> for uniformity, flattened, and labeled.</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">img</span> <span class="pre">=</span> <span class="pre">resize(img,</span> <span class="pre">(15,</span> <span class="pre">15))</span>
+<span class="pre">data.append(img.flatten())</span>
+<span class="pre">`</span></code></p>
+</div></blockquote>
+<ul>
+<li><p><strong>Model Training</strong>:
+A <cite>GridSearchCV</cite> is used to tune hyperparameters like <cite>gamma</cite> and <cite>C</cite> for the SVM classifier.</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">parameters</span> <span class="pre">=</span> <span class="pre">[{'gamma':</span> <span class="pre">[0.01,</span> <span class="pre">0.001,</span> <span class="pre">0.0001],</span> <span class="pre">'C':</span> <span class="pre">[1,</span> <span class="pre">10,</span> <span class="pre">100,</span> <span class="pre">1000]}]</span>
+<span class="pre">grid_search</span> <span class="pre">=</span> <span class="pre">GridSearchCV(classifier,</span> <span class="pre">parameters)</span>
+<span class="pre">grid_search.fit(x_train,</span> <span class="pre">y_train)</span>
+<span class="pre">`</span></code></p>
+</li>
+<li><p><strong>Evaluation</strong>:
+The system evaluates model performance using a confusion matrix.</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">conf_matrix</span> <span class="pre">=</span> <span class="pre">confusion_matrix(y_test,</span> <span class="pre">y_prediction)</span>
+<span class="pre">sns.heatmap(conf_matrix,</span> <span class="pre">annot=True,</span> <span class="pre">cmap=&quot;Blues&quot;)</span>
+<span class="pre">`</span></code></p>
+</li>
+</ul>
+</li>
+<li><p><strong>util.py</strong>:
+- Contains utility functions for parking spot detection and classification.
+- <strong>Key Functions</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><cite>empty_or_not</cite>: Determines if a parking spot is empty using the trained SVM model.</p></li>
+<li><p><cite>get_parking_spots_bboxes</cite>: Extracts bounding boxes for detected parking spots.</p></li>
+</ul>
+<p><strong>Example Usage</strong>:
+<code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">result</span> <span class="pre">=</span> <span class="pre">empty_or_not(spot_bgr)</span>
+<span class="pre">print(f&quot;Result:</span> <span class="pre">{result}&quot;)</span>
+<span class="pre">`</span></code></p>
+</div></blockquote>
+</li>
+<li><p><strong>main.py</strong>:
+- Integrates the utilities and processes a video to detect parking spots.
+- Uses a pre-defined mask to locate parking regions in the video.</p>
+<p><strong>Key Features</strong>:
+- Tracks changes in parking occupancy over time using frame differences.</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">diffs[spot_indx]</span> <span class="pre">=</span> <span class="pre">calc_diff(spot_crop,</span> <span class="pre">previous_frame[y1:y1</span> <span class="pre">+</span> <span class="pre">h,</span> <span class="pre">x1:x1</span> <span class="pre">+</span> <span class="pre">w,</span> <span class="pre">:])</span>
+<span class="pre">`</span></code></p>
+</div></blockquote>
+<ul>
+<li><p>Highlights parking spots in green (empty), red (occupied), or blue (reserved).</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">frame</span> <span class="pre">=</span> <span class="pre">cv2.rectangle(frame,</span> <span class="pre">(x1,</span> <span class="pre">y1),</span> <span class="pre">(x1</span> <span class="pre">+</span> <span class="pre">w,</span> <span class="pre">y1</span> <span class="pre">+</span> <span class="pre">h),</span> <span class="pre">(0,</span> <span class="pre">255,</span> <span class="pre">0),</span> <span class="pre">2)</span>
+<span class="pre">`</span></code></p>
+</li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="how-it-works">
+<h2>How It Works<a class="headerlink" href="#how-it-works" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><strong>Model Training</strong>:
+- A dataset with labeled parking images is prepared and used to train an SVM classifier.
+- The trained model is serialized for future use.</p></li>
+<li><p><strong>Real-time Detection</strong>:
+- A video feed is processed frame by frame.
+- Parking spots are identified using a pre-defined mask.
+- The system uses the trained SVM to determine the status of each spot.</p></li>
+<li><p><strong>Visualization</strong>:
+- Displays parking status on the video in real time with visual indicators for reserved spots.</p></li>
+</ol>
+</section>
+<section id="technical-details">
+<h2>Technical Details<a class="headerlink" href="#technical-details" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Libraries Used</strong>:
+- Computer Vision: <cite>OpenCV</cite>
+- Machine Learning: <cite>scikit-learn</cite>
+- Image Processing: <cite>scikit-image</cite>
+- Data Visualization: <cite>Matplotlib</cite>, <cite>Seaborn</cite></p></li>
+<li><p><strong>Inputs</strong>:
+- A mask image for identifying parking regions.
+- A video stream of the parking lot.</p></li>
+<li><p><strong>Outputs</strong>:
+- Real-time annotated video feed indicating parking occupancy.</p></li>
+</ul>
+</section>
+<section id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Expand the dataset to improve classifier accuracy.</p></li>
+<li><p>Implement a REST API to integrate with external applications.</p></li>
+</ul>
+<p>For further details, refer to the source code and the examples provided.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Chegdati &amp; Bellmir.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
