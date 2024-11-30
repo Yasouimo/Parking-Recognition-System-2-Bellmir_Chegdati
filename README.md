@@ -2,6 +2,9 @@
 u can find code explanation in here
 https://parking-recognition-system-2.readthedocs.io/en/latest/
 
+# Model Training
+u can find all the steps for Training the model in ParkingDetection_Bellmir_Chegdati.ipynb
+
 # Project Strucutre
 ![Screenshot 2024-11-30 105647](https://github.com/user-attachments/assets/60942ed9-41b6-4647-aab7-ecf8a1c0a6c1)
 
