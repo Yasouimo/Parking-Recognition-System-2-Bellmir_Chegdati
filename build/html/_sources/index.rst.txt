@@ -9,15 +9,22 @@ Contents
 --------
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
+   :caption: Documentation Sections
 
-
+   introduction
+   key_modules
+   svm_vs_yolov8
+   how_it_works
+   technical_details
+   next_steps
 
 Introduction
 ------------
 
 This project aims to solve the problem of parking space detection by leveraging:
 - **Support Vector Machines (SVM)** for classification.
+- **YOLOv8** for object detection.
 - Computer vision techniques for image processing.
 - Real-time video analysis to monitor parking occupancy.
 
@@ -84,6 +91,51 @@ Key Modules
      frame = cv2.rectangle(frame, (x1, y1), (x1 + w, y1 + h), (0, 255, 0), 2)
      ```
 
+4. **app.py**:
+   - A Flask-based web application to serve parking detection results.
+   - Provides an interface for users to upload videos or select live streams for analysis.
+
+   **Key Features**:
+   - Routes:
+     - `/`: Renders the homepage with video upload options.
+     - `/process`: Processes the uploaded video and returns annotated output.
+
+     ```python
+     @app.route('/')
+     def home():
+         return render_template('index.html')
+     ```
+
+   - Uses YOLOv8 for real-time parking spot detection.
+
+5. **yolo_page.py**:
+   - Demonstrates the integration of YOLOv8 for detecting parking spaces.
+   - **Key Functions**:
+     - `run_yolo_inference`: Loads YOLOv8 model and applies it to video frames.
+     - `annotate_frame`: Draws bounding boxes for detected parking spots.
+
+     ```python
+     results = model.predict(source=frame)
+     for box in results.boxes:
+         cv2.rectangle(frame, ...)
+     ```
+
+   - Includes YOLO's post-processing for bounding box predictions.
+
+6. **SVM vs YOLOv8**:
+   - A detailed comparison of the performance and use cases of SVM and YOLOv8.
+
+   **Comparison Table**:
+   | Feature               | SVM               | YOLOv8            |
+   |-----------------------|-------------------|-------------------|
+   | Model Type            | Classifier        | Object Detector   |
+   | Accuracy (Test Data)  | ~85%             | ~95%              |
+   | Real-time Capability  | Limited          | Excellent         |
+   | Implementation Effort | Medium           | High              |
+
+   **Conclusion**:
+   - YOLOv8 is better for real-time applications with high accuracy requirements, while SVM is suitable for smaller datasets and simpler setups.
+
 How It Works
 ------------
 
@@ -94,7 +146,7 @@ How It Works
 2. **Real-time Detection**:
    - A video feed is processed frame by frame.
    - Parking spots are identified using a pre-defined mask.
-   - The system uses the trained SVM to determine the status of each spot.
+   - The system uses the trained SVM or YOLOv8 to determine the status of each spot.
 
 3. **Visualization**:
    - Displays parking status on the video in real time with visual indicators for reserved spots.
@@ -106,6 +158,8 @@ Technical Details
   - Computer Vision: `OpenCV`
   - Machine Learning: `scikit-learn`
   - Image Processing: `scikit-image`
+  - Object Detection: `YOLOv8`
+  - Web Framework: `Flask`
   - Data Visualization: `Matplotlib`, `Seaborn`
 
 - **Inputs**:
@@ -119,7 +173,7 @@ Next Steps
 ----------
 
 - Expand the dataset to improve classifier accuracy.
+- Integrate YOLOv8 fully into the Flask application.
 - Implement a REST API to integrate with external applications.
 
 For further details, refer to the source code and the examples provided.
-
