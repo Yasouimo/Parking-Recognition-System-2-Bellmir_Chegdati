@@ -13,7 +13,7 @@ page = st.sidebar.radio("Select a page:", ["Parking Surveillance", "YOLO Detecti
 if page == "Parking Surveillance":
     # Original parking surveillance logic
     mask_path = 'mask_1920_1080.png'
-    video_path = 'data/parking_1920_1080_loop.mp4'
+    video_path = 'data/parking_1920_1080.mp4'
 
     # Chargement du masque et de la vidéo
     mask = cv2.imread(mask_path, 0)

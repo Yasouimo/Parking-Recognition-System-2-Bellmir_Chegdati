@@ -10,7 +10,7 @@ def calc_diff(im1, im2):
 
 # Initialisation des chemins des fichiers
 mask = 'mask_1920_1080.png'
-video_path = 'data/parking_1920_1080_loop.mp4'
+video_path = 'data/parking_1920_1080.mp4'
 
 # Chargement du masque et ouverture de la vidéo
 mask = cv2.imread(mask, 0)
