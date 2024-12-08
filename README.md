@@ -1,3 +1,8 @@
+# About
+Parking Recognition System is a project realised by:Bellmir Yahya&Chegdati Chouaib
+Supervised by:M.Masrour Tawfik
+Project for 4th Year Modelisation et simulation en IA
+
 # Readthedocs
 u can find code explanation in here
 https://parking-recognition-system-2.readthedocs.io/en/latest/
@@ -24,3 +29,7 @@ pip install -r requirementProject.txt
 # Runing the app
 Go to app.py and execute following command
 streamlit run app.py
+
+# App on Streamlit
+To see the app directly on streamlit cloud please visit the link below
+https://parking-recognition-system-2-xjnsauyud2ptolwxeuz3n3.streamlit.app
