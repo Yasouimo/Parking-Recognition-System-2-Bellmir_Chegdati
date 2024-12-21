@@ -1,7 +1,7 @@
 # About
 Parking Recognition System is a project realised by:Bellmir Yahya&Chegdati Chouaib
 Supervised by:M.Masrour Tawfik
-Project for 4th Year Modelisation et simulation en IA
+Project for 4th Year Modelisation et simulation en IA Year 2024-2025
 
 # Readthedocs
 u can find code explanation in here
