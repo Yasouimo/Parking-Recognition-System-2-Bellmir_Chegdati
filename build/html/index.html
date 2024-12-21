@@ -79,6 +79,11 @@
              
   <section id="parking-space-recognition-system">
 <h1>Parking Space Recognition System<a class="headerlink" href="#parking-space-recognition-system" title="Link to this heading"></a></h1>
+<p id="project-title"><strong>Project for 4th Year Students</strong></p>
+<p><strong>Bellmir &amp; Chegdati</strong></p>
+<p><strong>Modélisation et Simulation en IA</strong></p>
+<p>Supervised by:
+<strong>Mr. Tawfik Masrour</strong></p>
 <p>The <strong>Parking Space Recognition System</strong> is designed to detect and manage parking spaces in real time using computer vision and machine learning. This system includes several modules for data preparation, classification, and real-time parking spot analysis.</p>
 <p>This documentation explains the primary functionalities and key parts of the implementation.</p>
 <section id="contents">
@@ -205,15 +210,90 @@ for box in results.boxes:</p>
 </li>
 <li><p><strong>SVM vs YOLOv8</strong>:
 - A detailed comparison of the performance and use cases of SVM and YOLOv8.</p>
-<p><strong>Comparison Table</strong>:
-| Feature               | SVM               | YOLOv8            |
-<a href="#id17"><span class="problematic" id="id18">|-----------------------|</span></a>——————-<a href="#id19"><span class="problematic" id="id20">|-------------------|</span></a>
-| Model Type            | Classifier        | Object Detector   |
-| Accuracy (Test Data)  | ~85%             | ~95%              |
-| Real-time Capability  | Limited          | Excellent         |
-| Implementation Effort | Medium           | High              |</p>
+<p><strong>Comparison Table</strong>:</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Feature</p></td>
+<td><p>SVM</p></td>
+<td><p>YOLOv8</p></td>
+</tr>
+<tr class="row-even"><td><p>Model Type
+Accuracy (Test Data)
+Real-time Capability
+Implementation Effort</p></td>
+<td><p>Classifier
+~85%
+Limited
+Medium</p></td>
+<td><p>Object Detector
+~95%
+Excellent
+High</p></td>
+</tr>
+</tbody>
+</table>
 <p><strong>Conclusion</strong>:
 - YOLOv8 is better for real-time applications with high accuracy requirements, while SVM is suitable for smaller datasets and simpler setups.</p>
+</li>
+<li><p><strong>Parking Spot Detection Model Training</strong>
+- Training a YOLOv8 model to detect “empty” and “not_empty” parking spots using a dataset of 1700 images.</p>
+<p><strong>Training Steps</strong>:
+1. <strong>Dataset Preparation</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>A dataset of 1700 labeled images was prepared and stored in the specified directory.</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic" start="2">
+<li><p><strong>Library Installation</strong>:
+- Installed required libraries:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><cite>ultralytics</cite> using <cite>!pip install ultralytics</cite></p></li>
+<li><p><cite>supervision</cite> using <cite>!pip install supervision</cite></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Model Initialization</strong>:
+- A pretrained YOLOv8 model (<cite>yolov8n.pt</cite>) was loaded with:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">from</span> <span class="pre">ultralytics</span> <span class="pre">import</span> <span class="pre">YOLO</span>
+<span class="pre">model</span> <span class="pre">=</span> <span class="pre">YOLO('yolov8n.pt')</span>
+<span class="pre">`</span></code></p>
+</div></blockquote>
+</li>
+<li><p><strong>Training Configuration</strong>:
+- Dataset path was set using:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">ROOT_DIR</span> <span class="pre">=</span> <span class="pre">&quot;/content/drive/MyDrive/Parking</span> <span class="pre">detection&quot;</span>
+<span class="pre">`</span></code></p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Model training executed for 100 epochs:
+<code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">results</span> <span class="pre">=</span> <span class="pre">model.train(data=os.path.join(ROOT_DIR,</span> <span class="pre">&quot;data.yaml&quot;),</span> <span class="pre">epochs=100)</span>
+<span class="pre">`</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Validation</strong>:
+- Model performance on the validation set was evaluated with:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">results</span> <span class="pre">=</span> <span class="pre">model.val()</span>
+<span class="pre">`</span></code></p>
+</div></blockquote>
+</li>
+<li><p><strong>Visualization</strong>:
+- Training results and images were displayed using:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">from</span> <span class="pre">IPython.display</span> <span class="pre">import</span> <span class="pre">display,</span> <span class="pre">Image</span>
+<span class="pre">`</span></code></p>
+</div></blockquote>
+</li>
+</ol>
 </li>
 </ol>
 </section>

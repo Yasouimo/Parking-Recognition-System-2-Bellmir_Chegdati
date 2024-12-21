@@ -5,3 +5,4 @@ scikit-image
 numpy
 opencv-python-headless
 streamlit
+ultralytics

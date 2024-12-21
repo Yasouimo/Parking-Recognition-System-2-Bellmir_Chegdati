@@ -1,9 +1,23 @@
 Parking Space Recognition System
 ================================
 
+.. _project_title:
+
+**Project for 4th Year Students**  
+
+**Bellmir & Chegdati**  
+
+**Modélisation et Simulation en IA**
+
+Supervised by:  
+**Mr. Tawfik Masrour**
+
+
+
 The **Parking Space Recognition System** is designed to detect and manage parking spaces in real time using computer vision and machine learning. This system includes several modules for data preparation, classification, and real-time parking spot analysis.
 
 This documentation explains the primary functionalities and key parts of the implementation.
+
 
 Contents
 --------
@@ -126,15 +140,54 @@ Key Modules
    - A detailed comparison of the performance and use cases of SVM and YOLOv8.
 
    **Comparison Table**:
+   
+   +-----------------------+-------------------+-------------------+
    | Feature               | SVM               | YOLOv8            |
-   |-----------------------|-------------------|-------------------|
+   +-----------------------+-------------------+-------------------+
    | Model Type            | Classifier        | Object Detector   |
-   | Accuracy (Test Data)  | ~85%             | ~95%              |
-   | Real-time Capability  | Limited          | Excellent         |
-   | Implementation Effort | Medium           | High              |
+   | Accuracy (Test Data)  | ~85%              | ~95%              |
+   | Real-time Capability  | Limited           | Excellent         |
+   | Implementation Effort | Medium            | High              |
+   +-----------------------+-------------------+-------------------+
 
    **Conclusion**:
    - YOLOv8 is better for real-time applications with high accuracy requirements, while SVM is suitable for smaller datasets and simpler setups.
+
+7. **Parking Spot Detection Model Training**
+   - Training a YOLOv8 model to detect "empty" and "not_empty" parking spots using a dataset of 1700 images.
+
+   **Training Steps**:
+   1. **Dataset Preparation**: 
+      - A dataset of 1700 labeled images was prepared and stored in the specified directory.
+   2. **Library Installation**: 
+      - Installed required libraries:
+        - `ultralytics` using `!pip install ultralytics`
+        - `supervision` using `!pip install supervision`
+   3. **Model Initialization**: 
+      - A pretrained YOLOv8 model (`yolov8n.pt`) was loaded with:
+        ```python
+        from ultralytics import YOLO
+        model = YOLO('yolov8n.pt')
+        ```
+   4. **Training Configuration**:
+      - Dataset path was set using:
+        ```python
+        ROOT_DIR = "/content/drive/MyDrive/Parking detection"
+        ```
+      - Model training executed for 100 epochs:
+        ```python
+        results = model.train(data=os.path.join(ROOT_DIR, "data.yaml"), epochs=100)
+        ```
+   5. **Validation**:
+      - Model performance on the validation set was evaluated with:
+        ```python
+        results = model.val()
+        ```
+   6. **Visualization**:
+      - Training results and images were displayed using:
+        ```python
+        from IPython.display import display, Image
+        ```
 
 How It Works
 ------------

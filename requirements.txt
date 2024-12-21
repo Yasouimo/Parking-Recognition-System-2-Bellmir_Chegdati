@@ -1,9 +1,1 @@
 sphinx-rtd-theme==3.0.2
-matplotlib
-seaborn
-scikit-learn
-scikit-image
-numpy
-opencv-python-headless
-streamlit
-ultralytics
