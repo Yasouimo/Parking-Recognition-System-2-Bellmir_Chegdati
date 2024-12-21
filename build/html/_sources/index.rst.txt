@@ -3,7 +3,9 @@ Parking Space Recognition System
 
 .. _project_title:
 
-**Project for 4th Year Students Year 2024-2025**  
+**Project for 4th Year Students**  
+
+**Year 2024-2025**
 
 **Bellmir & Chegdati**  
 
