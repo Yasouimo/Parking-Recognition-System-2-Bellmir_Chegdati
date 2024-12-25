@@ -8,13 +8,18 @@ WEIGHTS_PATH = 'models/best.pt'
 THRESHOLD = 0.5
 
 # Initialize session state
-if 'reserved_spots' not in st.session_state:
-    st.session_state.reserved_spots = []
-if 'model' not in st.session_state:
-    st.session_state.model = YOLO(WEIGHTS_PATH)
-if 'current_file' not in st.session_state:
-    st.session_state.current_file = None
+def initialize_session_state():
+    """Initialize session state variables."""
+    if 'reserved_spots' not in st.session_state:
+        st.session_state.reserved_spots = []
+    if 'model' not in st.session_state:
+        st.session_state.model = YOLO(WEIGHTS_PATH)
+    if 'current_file' not in st.session_state:
+        st.session_state.current_file = None
+    if 'spot_positions' not in st.session_state:
+        st.session_state.spot_positions = []
 
+# Process the image and handle reservations
 def process_image(image):
     """Process image with YOLO and handle reservations"""
     frame = cv2.imdecode(np.frombuffer(image, np.uint8), cv2.IMREAD_COLOR)
@@ -25,9 +30,8 @@ def process_image(image):
     results = st.session_state.model.predict(frame, conf=THRESHOLD)
     mask = frame.copy()
 
-    # Store spot positions to maintain consistent numbering
-    if 'spot_positions' not in st.session_state:
-        st.session_state.spot_positions = []
+    # Update spot positions if they haven't been initialized
+    if not st.session_state.spot_positions:
         for result in results[0].boxes:
             x1, y1, x2, y2 = map(int, result.xyxy[0])
             st.session_state.spot_positions.append((x1, y1, x2, y2))
@@ -39,12 +43,11 @@ def process_image(image):
         class_id = int(result.cls[0])  # 0 = empty, 1 = occupied
         
         # Determine color based on status
+        color = (0, 255, 0)  # Green for empty
         if spot_id in st.session_state.reserved_spots:
             color = (255, 0, 0)  # Blue for reserved
         elif class_id == 1:
             color = (0, 0, 255)  # Red for occupied
-        else:
-            color = (0, 255, 0)  # Green for empty
 
         # Draw semi-transparent overlay
         overlay = mask.copy()
@@ -73,6 +76,7 @@ def process_image(image):
 
     return cv2.cvtColor(mask, cv2.COLOR_BGR2RGB)
 
+# Handle spot reservation with validation
 def handle_reservation(spot_id, results):
     """Handle spot reservation with validation"""
     if not results or not results[0].boxes:
@@ -99,8 +103,11 @@ def handle_reservation(spot_id, results):
     st.success(f"Spot #{spot_id} reserved successfully!")
     return True
 
+# Main Streamlit interface
 def run():
     """Main Streamlit interface"""
+    initialize_session_state()
+
     st.title("Parking Space Detection with Reservation")
 
     # File upload
@@ -110,8 +117,7 @@ def run():
     if not uploaded_file and st.session_state.current_file is not None:
         st.session_state.reserved_spots = []
         st.session_state.current_file = None
-        if 'spot_positions' in st.session_state:
-            del st.session_state.spot_positions
+        st.session_state.spot_positions = []
 
     # Reservation interface
     col1, col2 = st.columns(2)
@@ -126,7 +132,13 @@ def run():
 
         if "image" in uploaded_file.type:
             image = uploaded_file.read()
-            results = st.session_state.model.predict(image, conf=THRESHOLD)
+            frame = cv2.imdecode(np.frombuffer(image, np.uint8), cv2.IMREAD_COLOR)
+            
+            if frame is None:
+                st.error("Error: Unable to load image.")
+                return
+            
+            results = st.session_state.model.predict(frame, conf=THRESHOLD)
             
             if reserve_button and spot_input.isnumeric():
                 handle_reservation(int(spot_input), results)
