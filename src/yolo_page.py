@@ -17,15 +17,13 @@ if 'current_file' not in st.session_state:
 
 def process_image(image):
     """Process image with YOLO and handle reservations"""
-    # Convert uploaded image to a NumPy array
-    file_bytes = np.asarray(bytearray(image), dtype=np.uint8)
-    frame = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)  # Convert bytes to OpenCV image
-
+    # Decode the image from the uploaded file bytes
+    frame = cv2.imdecode(np.frombuffer(image, np.uint8), cv2.IMREAD_COLOR)
     if frame is None:
         st.error("Error: Unable to load image.")
         return
 
-    # Proceed with YOLO prediction
+    # YOLO expects a NumPy array, ensure the image is correctly passed
     results = st.session_state.model.predict(frame, conf=THRESHOLD)
     mask = frame.copy()
 
@@ -76,6 +74,7 @@ def process_image(image):
                     cv2.FONT_HERSHEY_SIMPLEX, font_scale, (255, 255, 255), thickness)
 
     return cv2.cvtColor(mask, cv2.COLOR_BGR2RGB)
+
 
 def handle_reservation(spot_id, results):
     """Handle spot reservation with validation"""
