@@ -35,7 +35,7 @@ streamlit run app.py
 
 # App on streamlit
 Visit the link below to visualise the app on streamlitcloud
-https://parking-recognition-system-2-bellmirchegdati-version1.streamlit.app/
+https://parking-recognition-system-2-bellmirchegdati-v1.streamlit.app/
 
 **Warning**: Please note that some features of the app may be less functional or behave differently due to the limitations of Streamlit Cloud. We recommend using the app locally for the best experience.
 
