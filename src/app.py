@@ -2,9 +2,13 @@ import streamlit as st
 import cv2
 import numpy as np
 from util import get_parking_spots_bboxes, empty_or_not
+import sys
+import os
 
-# Import additional pages
-from src import yolo_page # Assurez-vous que `yolo_page.py` est dans le même répertoire
+# Ajouter 'src' au chemin d'importation
+sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
+
+import yolo_page
 
 # Sidebar navigation
 st.sidebar.title("Navigation")
