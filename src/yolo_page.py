@@ -22,6 +22,10 @@ def process_image(image):
         st.error("Error: Unable to load image.")
         return
 
+      # Ensure model is initialized before predicting
+    if 'model' not in st.session_state:
+        st.session_state.model = YOLO(WEIGHTS_PATH)
+
     results = st.session_state.model.predict(frame, conf=THRESHOLD)
     mask = frame.copy()
 
