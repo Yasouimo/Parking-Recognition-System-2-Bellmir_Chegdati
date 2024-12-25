@@ -37,7 +37,7 @@ All these inefficiencies would not only cause inconvenience to drivers but would
 The project aims to apply the convergence of computer vision and a Support Vector Machine (SVM) based classifier for efficient, easy, and optimal parking management by a user. This system improves the ability to manage parking resources more efficiently, reducing time spent searching for spaces and minimizing traffic disruption. Ultimately, it provides a smart and scalable solution to the growing challenges of urban parking management, ensuring a smoother and more convenient experience for drivers and urban planners.
 
 For more information about this project, we invite you to visit the link below:  
-https://acrobat.adobe.com/id/urn:aaid:sc:eu:7e7b5ec5-ff7f-420b-bc20-aef333517c5e?viewer%21megaVerb=group-discover
+https://acrobat.adobe.com/id/urn:aaid:sc:eu:183ccef1-418f-464a-ad53-d241eb26c243
 
 This project aims to solve the problem of parking space detection by leveraging:
 - **Support Vector Machines (SVM)** for classification.
