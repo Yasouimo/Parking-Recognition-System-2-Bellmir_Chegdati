@@ -17,11 +17,15 @@ if 'current_file' not in st.session_state:
 
 def process_image(image):
     """Process image with YOLO and handle reservations"""
-    frame = cv2.imdecode(np.frombuffer(image, np.uint8), cv2.IMREAD_COLOR)
+    # Convert uploaded image to a NumPy array
+    file_bytes = np.asarray(bytearray(image), dtype=np.uint8)
+    frame = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)  # Convert bytes to OpenCV image
+
     if frame is None:
         st.error("Error: Unable to load image.")
         return
 
+    # Proceed with YOLO prediction
     results = st.session_state.model.predict(frame, conf=THRESHOLD)
     mask = frame.copy()
 
