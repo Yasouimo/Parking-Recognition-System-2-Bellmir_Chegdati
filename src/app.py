@@ -4,7 +4,7 @@ import numpy as np
 from util import get_parking_spots_bboxes, empty_or_not
 
 # Import additional pages
-import yolo_page  # Assurez-vous que `yolo_page.py` est dans le même répertoire
+from src import yolo_page # Assurez-vous que `yolo_page.py` est dans le même répertoire
 
 # Sidebar navigation
 st.sidebar.title("Navigation")
