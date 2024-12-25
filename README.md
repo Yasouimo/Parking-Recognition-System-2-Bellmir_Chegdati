@@ -7,6 +7,10 @@ Project for 4th Year Modelisation et simulation en IA Year 2024-2025
 u can find code explanation in here
 https://parking-recognition-system-2.readthedocs.io/en/latest/
 
+# Project report (Rapport du Projet)
+![Page de Garde (1)-1](https://github.com/user-attachments/assets/51df2aa3-8570-46aa-b820-21364c6397a4)
+Please visit the link here https://acrobat.adobe.com/id/urn:aaid:sc:eu:7e7b5ec5-ff7f-420b-bc20-aef333517c5e?viewer%21megaVerb=group-discover
+
 # Model Training
 u can find all the steps for Training the model in ParkingDetection_Bellmir_Chegdati.ipynb
 
