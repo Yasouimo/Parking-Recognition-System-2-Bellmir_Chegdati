@@ -1,7 +1,11 @@
 # Parking Recognition system
-Project for 4th Year Student Bellmir Yahya&Chegdati Chouaib
-Supervised by: Mr.Masrour Tawfik
 Project for 4th Year "Modélisation et Simulation en IA" 2024-2025"
+
+Project for 4th Year Student Bellmir Yahya&Chegdati Chouaib
+
+
+Supervised by: Mr.Masrour Tawfik
+
 
 # Project Report(Rapport du Projet)
 ![Page de Garde (1)_page-0001](https://github.com/user-attachments/assets/f772df07-53d7-46d7-a386-31b18c06b51c)
