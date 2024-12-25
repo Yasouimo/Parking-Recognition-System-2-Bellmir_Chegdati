@@ -1,0 +1,340 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parking Space Recognition System &mdash; Parking Space Recognition System  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            Parking Space Recognition System
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Parking Space Recognition System</a><ul>
+<li><a class="reference internal" href="#contents">Contents</a></li>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#key-modules">Key Modules</a></li>
+<li><a class="reference internal" href="#how-it-works">How It Works</a></li>
+<li><a class="reference internal" href="#technical-details">Technical Details</a></li>
+<li><a class="reference internal" href="#next-steps">Next Steps</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Parking Space Recognition System</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Parking Space Recognition System</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="parking-space-recognition-system">
+<h1>Parking Space Recognition System<a class="headerlink" href="#parking-space-recognition-system" title="Link to this heading"></a></h1>
+<p><strong>Project for 4th Year Students</strong>
+<strong>Year 2024-2025</strong>
+<strong>Bellmir &amp; Chegdati</strong>
+<strong>Modélisation et Simulation en IA</strong></p>
+<p>Supervised by:
+<strong>Mr. Tawfik Masrour</strong></p>
+<p>The <strong>Parking Space Recognition System</strong> is designed to detect and manage parking spaces in real-time using computer vision and machine learning. This system includes several modules for data preparation, classification, and real-time parking spot analysis.</p>
+<p>This documentation explains the primary functionalities and key parts of the implementation.</p>
+<section id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>Parking management has always been a major concern for growing cities. Traditional parking management systems use inefficient means that are not well-suited to today’s urban environments. Manual processing such as automatic ticketing, barriers, and human surveillance are common features of traditional parking management. However, it has served for decades, despite its limitations in terms of delay, human error, and inefficiency during peak hours.</p>
+<p>Continued urbanization is increasing the number of vehicles, a direct consequence of more advanced parking systems. Another problem is that old parking systems did not adapt well to growing parking demands in densely populated areas. Cities would grow and develop into even more complex systems, and with them, finding available parking spaces would become a nightmare. This would also result in traffic congestion and frustration for the average driver. Conventional systems would not even provide real-time monitoring capabilities, creating longer wait times for drivers and underutilization of parking lots.</p>
+<p>All these inefficiencies would not only cause inconvenience to drivers but would ultimately affect the entire traffic flow of the city. In addition to this, modern cities value parking space detection and reservation to improve traffic congestion and more efficient use of spaces. In this project, we have developed an intelligent system that detects parking spaces from images and reserves parking spaces through intuitive interfaces.</p>
+<p>The project aims to apply the convergence of computer vision and a Support Vector Machine (SVM) based classifier for efficient, easy, and optimal parking management by a user. This system improves the ability to manage parking resources more efficiently, reducing time spent searching for spaces and minimizing traffic disruption. Ultimately, it provides a smart and scalable solution to the growing challenges of urban parking management, ensuring a smoother and more convenient experience for drivers and urban planners.</p>
+<p>For more information about this project, we invite you to visit the link below:
+<a class="reference external" href="https://acrobat.adobe.com/id/urn:aaid:sc:eu:7e7b5ec5-ff7f-420b-bc20-aef333517c5e?viewer%21megaVerb=group-discover">https://acrobat.adobe.com/id/urn:aaid:sc:eu:7e7b5ec5-ff7f-420b-bc20-aef333517c5e?viewer%21megaVerb=group-discover</a></p>
+<p>This project aims to solve the problem of parking space detection by leveraging:
+- <strong>Support Vector Machines (SVM)</strong> for classification.
+- <strong>YOLOv8</strong> for object detection.
+- Computer vision techniques for image processing.
+- Real-time video analysis to monitor parking occupancy.</p>
+</section>
+<section id="key-modules">
+<h2>Key Modules<a class="headerlink" href="#key-modules" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p><strong>ParkingSpaceRecognition.py</strong>:
+- Handles data preparation, model training, and evaluation.
+- Trains an SVM model to classify parking spots as “empty” or “not empty.”
+- Saves the trained model using Python’s <cite>pickle</cite> library.</p>
+<p><strong>Key Code Explanations</strong>:
+- <strong>Data Preparation</strong>:</p>
+<blockquote>
+<div><p>Images are resized to <cite>(15, 15)</cite> for uniformity, flattened, and labeled.
+<code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">img</span> <span class="pre">=</span> <span class="pre">resize(img,</span> <span class="pre">(15,</span> <span class="pre">15))</span>
+<span class="pre">data.append(img.flatten())</span>
+<span class="pre">`</span></code></p>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>Model Training</strong>:
+A <cite>GridSearchCV</cite> is used to tune hyperparameters like <cite>gamma</cite> and <cite>C</cite> for the SVM classifier.
+<code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">parameters</span> <span class="pre">=</span> <span class="pre">[{'gamma':</span> <span class="pre">[0.01,</span> <span class="pre">0.001,</span> <span class="pre">0.0001],</span> <span class="pre">'C':</span> <span class="pre">[1,</span> <span class="pre">10,</span> <span class="pre">100,</span> <span class="pre">1000]}]</span>
+<span class="pre">grid_search</span> <span class="pre">=</span> <span class="pre">GridSearchCV(classifier,</span> <span class="pre">parameters)</span>
+<span class="pre">grid_search.fit(x_train,</span> <span class="pre">y_train)</span>
+<span class="pre">`</span></code></p></li>
+<li><p><strong>Evaluation</strong>:
+The system evaluates model performance using a confusion matrix.
+<code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">conf_matrix</span> <span class="pre">=</span> <span class="pre">confusion_matrix(y_test,</span> <span class="pre">y_prediction)</span>
+<span class="pre">sns.heatmap(conf_matrix,</span> <span class="pre">annot=True,</span> <span class="pre">cmap=&quot;Blues&quot;)</span>
+<span class="pre">`</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>util.py</strong>:
+- Contains utility functions for parking spot detection and classification.
+- <strong>Key Functions</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><cite>empty_or_not</cite>: Determines if a parking spot is empty using the trained SVM model.</p></li>
+<li><p><cite>get_parking_spots_bboxes</cite>: Extracts bounding boxes for detected parking spots.</p></li>
+</ul>
+<p><strong>Example Usage</strong>:
+<code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">result</span> <span class="pre">=</span> <span class="pre">empty_or_not(spot_bgr)</span>
+<span class="pre">print(f&quot;Result:</span> <span class="pre">{result}&quot;)</span>
+<span class="pre">`</span></code></p>
+</div></blockquote>
+</li>
+<li><p><strong>main.py</strong>:
+- Integrates the utilities and processes a video to detect parking spots.
+- Uses a pre-defined mask to locate parking regions in the video.</p>
+<p><strong>Key Features</strong>:
+- Tracks changes in parking occupancy over time using frame differences.</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">diffs[spot_indx]</span> <span class="pre">=</span> <span class="pre">calc_diff(spot_crop,</span> <span class="pre">previous_frame[y1:y1</span> <span class="pre">+</span> <span class="pre">h,</span> <span class="pre">x1:x1</span> <span class="pre">+</span> <span class="pre">w,</span> <span class="pre">:])</span>
+<span class="pre">`</span></code></p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Highlights parking spots in green (empty), red (occupied), or blue (reserved).
+<code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">frame</span> <span class="pre">=</span> <span class="pre">cv2.rectangle(frame,</span> <span class="pre">(x1,</span> <span class="pre">y1),</span> <span class="pre">(x1</span> <span class="pre">+</span> <span class="pre">w,</span> <span class="pre">y1</span> <span class="pre">+</span> <span class="pre">h),</span> <span class="pre">(0,</span> <span class="pre">255,</span> <span class="pre">0),</span> <span class="pre">2)</span>
+<span class="pre">`</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>app.py</strong>:
+- A Flask-based web application to serve parking detection results.
+- Provides an interface for users to upload videos or select live streams for analysis.</p>
+<p><strong>Key Features</strong>:
+- Routes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><cite>/</cite>: Renders the homepage with video upload options.</p></li>
+<li><p><cite>/process</cite>: Processes the uploaded video and returns annotated output.</p></li>
+</ul>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>python
+&#64;app.route(‘/’)
+def home():</p>
+<blockquote>
+<div><p>return render_template(‘index.html’)</p>
+</div></blockquote>
+<p><a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id7"><span class="problematic" id="id8">`</span></a></p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Uses YOLOv8 for real-time parking spot detection.</p></li>
+</ul>
+</li>
+<li><p><strong>yolo_page.py</strong>:
+- Demonstrates the integration of YOLOv8 for detecting parking spaces.
+- <strong>Key Functions</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><cite>run_yolo_inference</cite>: Loads YOLOv8 model and applies it to video frames.</p></li>
+<li><p><cite>annotate_frame</cite>: Draws bounding boxes for detected parking spots.</p></li>
+</ul>
+<p><a href="#id9"><span class="problematic" id="id10">``</span></a><a href="#id11"><span class="problematic" id="id12">`</span></a>python
+results = model.predict(source=frame)
+for box in results.boxes:</p>
+<blockquote>
+<div><p>cv2.rectangle(frame, …)</p>
+</div></blockquote>
+<p><a href="#id13"><span class="problematic" id="id14">``</span></a><a href="#id15"><span class="problematic" id="id16">`</span></a></p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Includes YOLO’s post-processing for bounding box predictions.</p></li>
+</ul>
+</li>
+<li><p><strong>SVM vs YOLOv8</strong>:
+- A detailed comparison of the performance and use cases of SVM and YOLOv8.</p>
+<p><strong>Comparison Table</strong>:
++———————–+——————-+——————-+
+| Feature               | SVM               | YOLOv8            |
++———————–+——————-+——————-+
+| Model Type            | Classifier        | Object Detector   |
+| Accuracy (Test Data)  | ~85%              | ~95%              |
+| Real-time Capability  | Limited           | Excellent         |
+| Implementation Effort | Medium            | High              |
++———————–+——————-+——————-+</p>
+<p><strong>Conclusion</strong>:
+- YOLOv8 is better for real-time applications with high accuracy requirements, while SVM is suitable for smaller datasets and simpler setups.</p>
+</li>
+<li><p><strong>Parking Spot Detection Model Training</strong>
+- Training a YOLOv8 model to detect “empty” and “not_empty” parking spots using a dataset of 1700 images.</p>
+<p><strong>Training Steps</strong>:
+1. <strong>Dataset Preparation</strong>:</p>
+<blockquote>
+<div><p>A dataset of 1700 labeled images was prepared and stored in the specified directory.</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p><strong>Library Installation</strong>:
+Installed required libraries:
+- <cite>ultralytics</cite> using <cite>!pip install ultralytics</cite>
+- <cite>supervision</cite> using <cite>!pip install supervision</cite></p></li>
+<li><p><strong>Model Initialization</strong>:
+A pretrained YOLOv8 model (<cite>yolov8n.pt</cite>) was loaded with:
+<code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">from</span> <span class="pre">ultralytics</span> <span class="pre">import</span> <span class="pre">YOLO</span>
+<span class="pre">model</span> <span class="pre">=</span> <span class="pre">YOLO('yolov8n.pt')</span>
+<span class="pre">`</span></code></p></li>
+<li><p><strong>Training Configuration</strong>:
+Dataset path was set using:
+<code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">ROOT_DIR</span> <span class="pre">=</span> <span class="pre">&quot;/content/drive/MyDrive/Parking</span> <span class="pre">detection&quot;</span>
+<span class="pre">`</span></code>
+Model training executed for 100 epochs:
+<code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">results</span> <span class="pre">=</span> <span class="pre">model.train(data=os.path.join(ROOT_DIR,</span> <span class="pre">&quot;data.yaml&quot;),</span> <span class="pre">epochs=100)</span>
+<span class="pre">`</span></code></p></li>
+<li><p><strong>Validation</strong>:
+Model performance on the validation set was evaluated with:
+<code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">results</span> <span class="pre">=</span> <span class="pre">model.val()</span>
+<span class="pre">`</span></code></p></li>
+<li><p><strong>Visualization</strong>:
+Training results and images were displayed using:
+<code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">from</span> <span class="pre">IPython.display</span> <span class="pre">import</span> <span class="pre">display,</span> <span class="pre">Image</span>
+<span class="pre">`</span></code></p></li>
+</ol>
+</li>
+</ol>
+</section>
+<section id="how-it-works">
+<h2>How It Works<a class="headerlink" href="#how-it-works" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><strong>Model Training</strong>:
+- A dataset with labeled parking images is prepared and used to train an SVM classifier.
+- The trained model is serialized for future use.</p></li>
+<li><p><strong>Real-time Detection</strong>:
+- A video feed is processed frame by frame.
+- Parking spots are identified using a pre-defined mask.
+- The system uses the trained SVM or YOLOv8 to determine the status of each spot.</p></li>
+<li><p><strong>Visualization</strong>:
+- Displays parking status on the video in real time with visual indicators for reserved spots.</p></li>
+</ol>
+</section>
+<section id="technical-details">
+<h2>Technical Details<a class="headerlink" href="#technical-details" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Libraries Used</strong>:
+- Computer Vision: <cite>OpenCV</cite>
+- Machine Learning: <cite>scikit-learn</cite>
+- Image Processing: <cite>scikit-image</cite>
+- Object Detection: <cite>YOLOv8</cite>
+- Web Framework: <cite>Flask</cite>
+- Data Visualization: <cite>Matplotlib</cite>, <cite>Seaborn</cite></p></li>
+<li><p><strong>Inputs</strong>:
+- A mask image for identifying parking regions.
+- A video stream of the parking lot.</p></li>
+<li><p><strong>Outputs</strong>:
+- Real-time annotated video feed indicating parking occupancy.</p></li>
+</ul>
+</section>
+<section id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Expand the dataset to improve classifier accuracy.</p></li>
+<li><p>Integrate YOLOv8 fully into the Flask application.</p></li>
+<li><p>Implement a REST API to integrate with external applications.</p></li>
+</ul>
+<p>For further details, refer to the source code and the examples provided.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Chegdati &amp; Bellmir.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
