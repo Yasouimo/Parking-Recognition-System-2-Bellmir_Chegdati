@@ -18,15 +18,21 @@ The SVM (Support Vector Machine) model is a supervised learning algorithm used f
 # Yolov8 model
 The YOLOv8 (You Only Look Once version 8) model is a state-of-the-art deep learning algorithm used for real-time object detection, capable of detecting and classifying objects in images and videos. In your application, it is stored in the models/best.pt file, likely as a trained PyTorch model ready for inference.
 
+# Training Steps
+U can find the details and steps we took to train our yolov8 model in colab
+
 # Requirement 
-To download requirement use !pip install -r requirements.txt
+To download requirement use 
+!pip install -r requirements.txt
 
 # Running the app
-To run the app use streamlit run app.py
+To run the app use
+streamlit run app.py
 
 # App on streamlit
 Visit the link below to visualise the app on streamlitcloud
 https://parking-recognition-system-2-bellmirchegdati-version1.streamlit.app/
+
 Warning:Please note that some features of the app may be less functional or behave differently due to the limitations of Streamlit Cloud. We recommend using the app locally for the best experience.
 
 
