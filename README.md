@@ -199,18 +199,6 @@ We welcome contributions to improve the system! Here's how you can help:
 **Supervisor:**
 - **Mr. Tawfik Masrour** - Academic Supervisor
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🔮 Future Enhancements
-
-- [ ] Expand dataset for improved accuracy
-- [ ] Implement REST API for external integrations
-- [ ] Add support for multiple camera angles
-- [ ] Integrate with parking management systems
-- [ ] Mobile application development
-- [ ] Real-time notifications for available spaces
 
 ## 📞 Contact
 
