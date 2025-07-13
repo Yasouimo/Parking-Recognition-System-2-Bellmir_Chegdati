@@ -194,7 +194,7 @@ We welcome contributions to improve the system! Here's how you can help:
 
 **Students:**
 - **Bellmir Yahya** - [Github](https://github.com/Yasouimo) | [LinkedIn](https://www.linkedin.com/in/yahya-bellmir-a54176284/)
-- **Chegdati Chouaib** - [Chegdati Chouaib](https://github.com/chouaibneuralnets) | [LinkedIn](https://www.linkedin.com/in/chouaib-chegdati-75a3a3302/)
+- **Chegdati Chouaib** - [Github](https://github.com/chouaibneuralnets) | [LinkedIn](https://www.linkedin.com/in/chouaib-chegdati-75a3a3302/)
 
 **Supervisor:**
 - **Mr. Tawfik Masrour** - Academic Supervisor
