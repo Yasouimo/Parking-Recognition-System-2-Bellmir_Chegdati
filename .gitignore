@@ -1,0 +1,10 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Development containers
+.devcontainer/
+
+# VS Code
+.vscode/
