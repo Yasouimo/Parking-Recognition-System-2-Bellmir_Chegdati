@@ -216,7 +216,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For questions, suggestions, or collaboration opportunities:
 
-- **Email:** [your.email@example.com]
+- **Email:** [yahyabellmir@gmail.com]
 - **Project Link:** [https://github.com/yourusername/parking-space-recognition]
 - **Documentation:** [https://parking-recognition-system-2.readthedocs.io/en/latest/]
 
