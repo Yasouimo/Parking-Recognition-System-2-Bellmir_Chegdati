@@ -28,7 +28,7 @@ This project addresses the growing challenge of urban parking management by leve
 **Academic Project Details:**
 - **Course:** Modélisation et Simulation en IA (4th Year)
 - **Academic Year:** 2024-2025
-- **Institution:** [Your University Name]
+- **Institution:** ENSAM Meknès 
 - **Supervisor:** Mr. Tawfik Masrour
 
 ![Page de Garde (1)_page-0001](https://github.com/user-attachments/assets/f772df07-53d7-46d7-a386-31b18c06b51c)
