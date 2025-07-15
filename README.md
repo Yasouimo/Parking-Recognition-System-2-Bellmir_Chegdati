@@ -8,18 +8,19 @@ An intelligent computer vision system that detects and classifies parking spaces
 
 ## 📋 Table of Contents
 
-- [Overview](#overview)
-- [Features](#features)
-- [Models](#models)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Documentation](#documentation)
-- [Demo](#demo)
-- [Performance](#performance)
-- [Contributing](#contributing)
-- [Authors](#authors)
-- [License](#license)
+- [Overview](#-overview)
+- [Features](#-features)
+- [Models](#-models)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [Project Structure](#-project-structure)
+- [Documentation](#-documentation)
+- [Demo](#-demo)
+- [Performance](#-performance)
+- [Technical Stack](#️-technical-stack)
+- [Contributing](#-contributing)
+- [Authors](#-authors)
+- [Contact](#-contact)
 
 ## 🎯 Overview
 
