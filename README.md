@@ -1,4 +1,4 @@
-# 🅿️ Parking Space Recognition System 
+# 🅿️ Parking Space Recognition System
 
 An intelligent computer vision system that detects and classifies parking spaces in real-time using machine learning algorithms.
 
